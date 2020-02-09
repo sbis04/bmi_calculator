@@ -4,7 +4,7 @@ target 'BMI Calculator' do
   use_frameworks!
 
   # Pods for BMI Calculator
-  flutter_application_path = '../bmi_flutter'
+  flutter_application_path = '$FCI_BUILD_DIR/bmi_flutter'
   load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
   install_all_flutter_pods(flutter_application_path)
