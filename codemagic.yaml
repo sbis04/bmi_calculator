@@ -9,7 +9,7 @@ workflows:
     scripts:
       - cd $FCI_BUILD_DIR/bmi_flutter && flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
-      - cd $FCI_BUILD_DIR/BMI\ Calculator && xcodebuild -workspace BMI\ Calculator.xcworkspace -scheme BMI\ Calculator
+      - cd $FCI_BUILD_DIR/BMI\ Calculator && xcodebuild -workspace BMI\ Calculator.xcworkspace -scheme BMI\ Calculator -configuration Debug
     artifacts:
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
