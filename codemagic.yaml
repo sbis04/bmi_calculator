@@ -1,0 +1,19 @@
+# Automatically generated on 2020-02-09 UTC from https://codemagic.io/app/5e3fde4b35303b26e4ee1145/settings
+# Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
+
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      flutter: stable
+    scripts:
+      - cd $FCI_BUILD_DIR/bmi_flutter && flutter packages pub get
+      - find . -name "Podfile" -execdir pod install \;
+      - cd $FCI_BUILD_DIR/BMI\ Calculator && xcodebuild -workspace BMI\ Calculator.xcworkspace -scheme BMI\ Calculator
+    artifacts:
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - sbis1999@gmail.com
