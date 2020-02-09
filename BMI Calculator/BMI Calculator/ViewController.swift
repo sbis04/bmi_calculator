@@ -36,8 +36,6 @@ class ViewController: UIViewController {
         print(bmiAdvice)
         print(bmiColor)
         
-//        self.performSegue(withIdentifier: "goToResult", sender: self)
-        
         let flutterEngine = ((UIApplication.shared.delegate as? AppDelegate)?.flutterEngine)!;
         let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil);
         self.present(flutterViewController, animated: true, completion: nil)
