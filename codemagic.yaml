@@ -25,7 +25,7 @@ workflows:
         # set up signing certificate
         echo $CM_CERTIFICATE | base64 --decode > /tmp/certificate.p12
         keychain add-certificates --certificate /tmp/certificate.p12 --certificate-password $CM_CERTIFICATE_PASSWORD
-      - xcode-project build-ipa --workspace $FCI_BUILD_DIR/BMI\ Calculator/BMI\ Calculator.xcworkspace --config Debug
+      - cd $FCI_BUILD_DIR/BMI\ Calculator && xcodebuild -workspace BMI\ Calculator.xcworkspace -scheme BMI\ Calculator -configuration Debug CODE_SIGNING_REQUIRED = NO
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
