@@ -106,11 +106,11 @@
 			buildConfigurationList = 44F824E023EFBD0600F13455 /* Build configuration list for PBXNativeTarget "BMI Calculator" */;
 			buildPhases = (
 				C895B616320CAA11CE414DCD /* [CP] Check Pods Manifest.lock */,
-				D649E0A2C35A1A20D418E596 /* [CP-User] Run Flutter Build Script */,
+				05B3C2AFCAA6D5FBB5EF1985 /* [CP-User] Run Flutter Build Script */,
 				44F824C823EFBD0600F13455 /* Sources */,
 				44F824C923EFBD0600F13455 /* Frameworks */,
 				44F824CA23EFBD0600F13455 /* Resources */,
-				4BD4F49651EBCF43D2CF9436 /* [CP] Embed Pods Frameworks */,
+				B2079187223BAF0A43FC8C99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,7 +168,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BD4F49651EBCF43D2CF9436 /* [CP] Embed Pods Frameworks */ = {
+		05B3C2AFCAA6D5FBB5EF1985 /* [CP-User] Run Flutter Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../bmi_flutter/.metadata",
+				"${SRCROOT}/../bmi_flutter/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../bmi_flutter/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../bmi_flutter/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../bmi_flutter/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		B2079187223BAF0A43FC8C99 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,22 +222,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		D649E0A2C35A1A20D418E596 /* [CP-User] Run Flutter Build Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../bmi_flutter/.metadata",
-				"${SRCROOT}/../bmi_flutter/.ios/Flutter/App.framework/App",
-				"${SRCROOT}/../bmi_flutter/.ios/Flutter/engine/Flutter.framework/Flutter",
-				"${SRCROOT}/../bmi_flutter/.ios/Flutter/flutter_export_environment.sh",
-			);
-			name = "[CP-User] Run Flutter Build Script";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../bmi_flutter/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 /* End PBXShellScriptBuildPhase section */
 

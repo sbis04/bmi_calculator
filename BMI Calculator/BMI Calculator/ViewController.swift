@@ -32,13 +32,31 @@ class ViewController: UIViewController {
         let bmiAdvice = calculatorBrain.getAdvice()
         let bmiColor = calculatorBrain.getColor()
         
-        print(bmiValue)
-        print(bmiAdvice)
-        print(bmiColor)
+//        print(bmiValue)
+//        print(bmiAdvice)
+//        print(bmiColor)
         
         let flutterEngine = ((UIApplication.shared.delegate as? AppDelegate)?.flutterEngine)!;
         let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil);
         self.present(flutterViewController, animated: true, completion: nil)
+        
+        let bmiDataChannel = FlutterMethodChannel(name: "com.souvikbiswas.bmi/data", binaryMessenger: flutterViewController.binaryMessenger)
+        
+        let jsonObject: NSMutableDictionary = NSMutableDictionary()
+        jsonObject.setValue(bmiValue, forKey: "value")
+        jsonObject.setValue(bmiAdvice, forKey: "advice")
+        jsonObject.setValue(bmiColor, forKey: "color")
+        
+        var convertedString: String? = nil
+        
+        do {
+            let data1 =  try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions.prettyPrinted)
+            convertedString = String(data: data1, encoding: String.Encoding.utf8)
+        } catch let myJSONError {
+            print(myJSONError)
+        }
+        
+        bmiDataChannel.invokeMethod("fromHostToClient", arguments: convertedString)
         
     }
 
