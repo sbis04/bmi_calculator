@@ -29,7 +29,7 @@ workflows:
       - cd $FCI_BUILD_DIR/BMI\ Calculator && xcode-project use-profiles
       - cd $FCI_BUILD_DIR/BMI\ Calculator && xcode-project build-ipa --workspace "BMI Calculator.xcworkspace" --scheme "BMI Calculator" --config Release --disable-xcpretty
     artifacts:
-      - build/ios/ipa/*.ipa
+      - BMI\ Calculator/build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
     publishing:
