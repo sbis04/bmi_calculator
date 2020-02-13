@@ -28,9 +28,9 @@ workflows:
       - cd $FCI_BUILD_DIR/bmi_flutter && flutter test
       - cd $FCI_BUILD_DIR/bmi_flutter && flutter build ios --release --no-codesign
       - cd $FCI_BUILD_DIR/BMI\ Calculator && xcode-project use-profiles
-      - xcode-project build-ipa --workspace "$FCI_BUILD_DIR/BMI Calculator/BMI Calculator.xcworkspace" --scheme "BMI Calculator" --disable-xcpretty
+      - xcode-project build-ipa --workspace "$FCI_BUILD_DIR/BMI Calculator/BMI Calculator.xcworkspace" --scheme "BMI Calculator"
     artifacts:
-      - BMI Calculator/build/ios/ipa/*.ipa
+      - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
     publishing:
