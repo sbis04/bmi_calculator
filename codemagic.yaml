@@ -40,4 +40,4 @@ workflows:
       app_store_connect:
         app_id: com.souvik-biswas.BMI-Calculator
         apple_id: sbis1999@gmail.com
-        password: Encrypted(Z0FBQUFBQmVZbFJtLUFPVFpWYTRnUFFRYmZPbC1lZklCQ1hMMS1jbnpCUV9Ob1hBOXllY1NJalJvUzg1MFpWYzNTbDNFRWVEdGNXR1paQWNXWDFaSjlacU00RXpWY0ZZOXc9PQ==)
+        password: Encrypted(Z0FBQUFBQmVZbVRYM1pEdF91eXBrMmtzdUE1bHBhVnRuTXFVSS1BMHQwZk4tRFlpLXpmWnVqakItZ1hSenVhOHBvWm1WbjFUNDBNWkN6MktCTmstV2hnS2pScENRcXRqSEE9PQ==)
