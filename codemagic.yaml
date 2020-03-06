@@ -38,6 +38,6 @@ workflows:
         recipients:
           - sbis1999@gmail.com
       app_store_connect:
-        app_id: com.souvik-biswas.BMI-Calculator
+        app_id: X8NNQ9CYL2.com.souvik-biswas.BMI-Calculator
         apple_id: sbis1999@gmail.com
-        password: Encrypted(Z0FBQUFBQmVZbVRYM1pEdF91eXBrMmtzdUE1bHBhVnRuTXFVSS1BMHQwZk4tRFlpLXpmWnVqakItZ1hSenVhOHBvWm1WbjFUNDBNWkN6MktCTmstV2hnS2pScENRcXRqSEE9PQ==)
+        password: Encrypted(Z0FBQUFBQmVZbW5ZSVAxaDJOSVVWaGl5bnhoajdMZU9VNmNBcFFvd0cxZDEweUUxcFBsWVpoTi1xLWczbzJWTkkybURXVlJoY25TVDlUQmRidC1QQ3ZFa0Fkd3RRbGdway1xMk9hTGNGMmx0ZmVvbXR6MG9lQnc9)
