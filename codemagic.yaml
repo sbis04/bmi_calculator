@@ -1,6 +1,3 @@
-# Automatically generated on 2020-02-09 UTC from https://codemagic.io/app/5e3ff20f35303b26e4ee1169/settings
-# Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
-
 workflows:
   default-workflow:
     name: Default Workflow
@@ -22,9 +19,8 @@ workflows:
       cocoapods: default
     scripts:
       - name: Get dependencies
-        working_directory: $FLUTTER_DIRECTORY
         script: |
-          flutter packages pub get
+          cd bmi_flutter && flutter packages pub get
           find . -name "Podfile" -execdir pod install \;
       - name: Test Flutter app
         working_directory: $FLUTTER_DIRECTORY
