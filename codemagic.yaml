@@ -18,36 +18,35 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      # - name: Get dependencies
-      #   working_directory: bmi_flutter
-      #   script: |
-      #     flutter packages pub get
-      #     find . -name "Podfile" -execdir pod install \;
-      # - name: Test Flutter app
-      #   working_directory: bmi_flutter
-      #   script: flutter test
-      # - name: Build Flutter app
-      #   working_directory: bmi_flutter
-      #   script: flutter build ios --release --no-codesign
+      - name: Get dependencies
+        working_directory: bmi_flutter
+        script: |
+          flutter packages pub get
+          find . -name "Podfile" -execdir pod install \;
+      - name: Test Flutter app
+        working_directory: bmi_flutter
+        script: flutter test
+      - name: Build Flutter app
+        working_directory: bmi_flutter
+        script: flutter build ios --release --no-codesign
       - name: Set up keychain
         script: keychain initialize
       - name: Fetch signing files
-        # working_directory: BMI\ Calculator
         script: app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
       - name: Use system default keychain
         script: keychain add-certificates
       - name: Set up code signing
-        working_directory: BMI\ Calculator
+        working_directory: BMI Calculator
         script: xcode-project use-profiles
       - name: Increment build number
-        working_directory: BMI\ Calculator
+        working_directory: BMI Calculator
         script: |
           #!/bin/sh
           set -e
           set -x
           agvtool new-version -all $(($BUILD_NUMBER + 1))
       - name: Build ipa for distribution
-        working_directory: BMI\ Calculator
+        working_directory: BMI Calculator
         script: xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
