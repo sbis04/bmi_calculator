@@ -14,7 +14,7 @@ workflows:
         APP_SPECIFIC_PASSWORD: Encrypted(Z0FBQUFBQmVZbW5ZSVAxaDJOSVVWaGl5bnhoajdMZU9VNmNBcFFvd0cxZDEweUUxcFBsWVpoTi1xLWczbzJWTkkybURXVlJoY25TVDlUQmRidC1QQ3ZFa0Fkd3RRbGdway1xMk9hTGNGMmx0ZmVvbXR6MG9lQnc9) # <-- Put your encrypted App Specific password address here
         FLUTTER_DIRECTORY: bmi_flutter
         IOS_DIRECTORY: BMI\ Calculator
-      flutter: stable
+      flutter: 1.12.13+hotfix.8
       xcode: latest
       cocoapods: default
     scripts:
@@ -32,8 +32,9 @@ workflows:
       - name: Set up keychain
         script: keychain initialize
       - name: Fetch signing files
+        working_directory: BMI\ Calculator
         script: |
-          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
+          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_DEVELOPMENT --create
       - name: Use system default keychain
         script: keychain add-certificates
       - name: Set up code signing
