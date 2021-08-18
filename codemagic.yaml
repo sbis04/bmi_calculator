@@ -14,7 +14,7 @@ workflows:
         APP_SPECIFIC_PASSWORD: Encrypted(Z0FBQUFBQmVZbW5ZSVAxaDJOSVVWaGl5bnhoajdMZU9VNmNBcFFvd0cxZDEweUUxcFBsWVpoTi1xLWczbzJWTkkybURXVlJoY25TVDlUQmRidC1QQ3ZFa0Fkd3RRbGdway1xMk9hTGNGMmx0ZmVvbXR6MG9lQnc9) # <-- Put your encrypted App Specific password address here
         FLUTTER_DIRECTORY: bmi_flutter
         IOS_DIRECTORY: BMI\ Calculator
-      flutter: 1.12.13+hotfix.8
+      flutter: stable
       xcode: latest
       cocoapods: default
     scripts:
