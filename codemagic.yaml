@@ -23,7 +23,7 @@ workflows:
           cd bmi_flutter && flutter packages pub get
           find . -name "Podfile" -execdir pod install \;
       - name: Test Flutter app
-        working_directory: $FLUTTER_DIRECTORY
+        working_directory: bmi_flutter
         script: flutter test
       - name: Build Flutter app
         working_directory: $FLUTTER_DIRECTORY
