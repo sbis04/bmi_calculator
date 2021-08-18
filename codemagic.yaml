@@ -18,11 +18,11 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Get dependencies
-        working_directory: bmi_flutter
-        script: |
-          flutter packages pub get
-          find . -name "Podfile" -execdir pod install \;
+      # - name: Get dependencies
+      #   working_directory: bmi_flutter
+      #   script: |
+      #     flutter packages pub get
+      #     find . -name "Podfile" -execdir pod install \;
       # - name: Test Flutter app
       #   working_directory: bmi_flutter
       #   script: flutter test
