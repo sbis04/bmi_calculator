@@ -59,7 +59,3 @@ workflows:
       app_store_connect:
         apple_id: $APPLE_ID_EMAIL
         password: $APP_SPECIFIC_PASSWORD
-      # app_store_connect:
-      #   app_id: com.souvik-biswas.BMI-Calculator
-      #   apple_id: sbis1999@gmail.com
-      #   password: Encrypted(Z0FBQUFBQmVZbW5ZSVAxaDJOSVVWaGl5bnhoajdMZU9VNmNBcFFvd0cxZDEweUUxcFBsWVpoTi1xLWczbzJWTkkybURXVlJoY25TVDlUQmRidC1QQ3ZFa0Fkd3RRbGdway1xMk9hTGNGMmx0ZmVvbXR6MG9lQnc9)
